@@ -224,13 +224,16 @@ All wireframes were created using [Balsamiq](https://balsamiq.com/).
 All project wireframes can be found below;
 - [Mobile Wireframes](documentation/wireframes/mobile)
 - [Tablet Wireframes](documentation/wireframes/tablet)
-- [Desktop Wireframes](documentation/wireframes/dekstop)
+- [Desktop Wireframes](documentation/wireframes/desktop)
 
 ### **Surface**
 #### Design
+The site needs to be visually appealing and consistent in order to keep the user engaged and comfortable. A clean, professional and modern design must be maintained to ensure that focus is not drawn away from its main objective; selling products. 
 
+The purpose of all features and elements must be clear to the user. Any design flaws or hindrances will only serve to frustrate the user, making it unlikely that they will remain on the site to complete a purchase.
 
 #### Colour
+
 
 
 ---
@@ -244,7 +247,12 @@ All project wireframes can be found below;
 ### **Languages**
 
 ### **Technologies**
- 
+- [Balsamiq](https://balsamiq.com/) - used to create wireframes.
+- [Coolors](https://coolors.co/) - used for choosing colour scheme.
+- [Git](https://git-scm.com/) - version control software used to commit and push code to GitHub.
+- [GitHub](https://github.com/) - hosting site used to store the source code of the site.
+- [GitPod](https://www.gitpod.io/) - IDE used to develop the site.
+- [TingPNG](https://tinypng.com/) - used to resize some images for web.
 
 ---
 ## <p align="center">**Testing**</p>
