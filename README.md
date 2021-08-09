@@ -1,4 +1,4 @@
-<p align="center"><img src="#" width="60%" alt="Boojie Bar Logo"/></p>
+<p align="center"><img src="documentation/logo.png" width="60%" alt="Boojie Bar Logo"/></p>
 
 # <p align="center">**MS4: Boojie Bar**</p>
 
@@ -20,6 +20,7 @@ This website has been created as my submission for Milestone Project 4 for the C
     - [Surface](#surface)
         - [Design](#design)
         - [Colour](#colour)
+        - [Fonts and Icons](#fonts-and-icons)
  - [**Features**](#features)
     - [Features Left to Implement](#features-left-to-implement)
  - [**Technologies Used**](#technologies-used)
@@ -233,8 +234,25 @@ The site needs to be visually appealing and consistent in order to keep the user
 The purpose of all features and elements must be clear to the user. Any design flaws or hindrances will only serve to frustrate the user, making it unlikely that they will remain on the site to complete a purchase.
 
 #### Colour
+I chose a very clean, black and white monochromatic colour scheme for the site. I opted for this modern and sleek look to help keep focus on the products that are being sold. The main hero image will bring a small splash of colour into the monochrome. This same kind of green hue will be used throughout the site in small doses to again provide small pops of colour. 
+
+The simple scheme ensures the user will not experience visual overload. It also helps to create a professional feel which is important for the user to feel like they are purchasing from a reliable source.
+
+I used [Coolors](https://coolors.co/) to help in choosing the colour scheme. I also used it to ensure the chosen colours contrasted well together so that all content could be seen and read clearly by users.
+
+- FFFCF2 Floral White
+- CCC5B9 Pale Silver
+- 403D39 Black Olive
+- 151513 Eerie Black
+- 6BDB6B Malachite
+
+![Site Colour Scheme](documentation/colour-scheme.png)
 
 
+#### Fonts and Icons
+The Montserrat and Raleway fonts will be used for the site as they work really well together in creating that sleek and modern look that we're looking for.
+
+Font Awesome will provide all icons contained on the site. Icons will help users to easily recognise different elements on the site, for example, the social media links and the shopping bag.
 
 ---
 ## <p align="center">**Features**</p>
@@ -248,7 +266,9 @@ The purpose of all features and elements must be clear to the user. Any design f
 
 ### **Technologies**
 - [Balsamiq](https://balsamiq.com/) - used to create wireframes.
+- [Canva](https://www.canva.com/) - used to create the site logo.
 - [Coolors](https://coolors.co/) - used for choosing colour scheme.
+- [Font Awesome](https://fontawesome.com/) - used for all icons seen on the site.
 - [Git](https://git-scm.com/) - version control software used to commit and push code to GitHub.
 - [GitHub](https://github.com/) - hosting site used to store the source code of the site.
 - [GitPod](https://www.gitpod.io/) - IDE used to develop the site.
@@ -268,7 +288,8 @@ The purpose of all features and elements must be clear to the user. Any design f
 - 
 
 ### **Media**
-- 
+- Site logo created by me using [Canva](https://www.canva.com/).
+- Hero image on landing page sourced from *romandebree* on [Canva](https://www.canva.com/media/MADcAZGE6Ps).
 
 ### **Code**
 - 
