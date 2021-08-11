@@ -35,12 +35,16 @@
     
     <body>
         <header class="container-fluid fixed-top">
+            <!-- TOP NAVIGATION BAR -->
             <div id="topnav" class="row">
-                <div class="col">
+                <div class="col search-bar pt-4">
+                    <!-- search bar form -->
                     <form method="GET" action="">
                         <div class="input-group w-100">
+                            <!-- search bar -->
                             <input class="form-control" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
+                                <!-- search submit button -->
                                 <button class="form-control btn" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
@@ -52,13 +56,15 @@
                 </div>
 
                 <div class="col text-center">
+                    <!-- site logo link for home page -->
                     <a href="{% url 'home' %}" class="nav-link nav-logo">
                         <img src="media/logo.png" id="logo" alt="Boojie Bar Logo">
                     </a>
                 </div>
   
-                <div class="col">
+                <div class="col nav-icons pt-4">
                     <ul class="list-inline list-unstyled text-center">
+                        <!-- account user options -->
                         <li class="list-inline-item dropdown">
                             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
@@ -67,18 +73,22 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                <!-- registered users link options -->
                                 {% if request.user.is_authenticated %}
+                                    <!-- admin link options -->
                                     {% if request.user.is_superuser %}
                                         <a href="" class="dropdown-item">Manage Products</a>
                                     {% endif %}
                                     <a href="" class="dropdown-item">My Account</a>
                                     <a href="" class="dropdown-item">Sign Out</a>
+                                <!-- unregistered users link options -->
                                 {% else %}
                                     <a href="" class="dropdown-item">Sign Up</a>
                                     <a href="" class="dropdown-item">Sign In</a>
                                 {% endif %}
                             </div>
                         </li>
+                        <!-- shopping bag link -->
                         <li class="list-inline-item">
                             <a class="nav-link" href="">
                                 <div class="text-center">
@@ -92,7 +102,7 @@
                     </ul>
                 </div>
             </div>
-            
+            <!-- End of TOP NAVIGATION BAR -->    
         </header>
 
         {% if messages %}
@@ -104,6 +114,42 @@
 
         {% block content %}
         {% endblock %}
+
+        <!-- FOOTER -->
+        <footer class="footer-section container-fluid fixed-bottom">
+            <div class="row">
+                <div class="col-sm-12 col-lg-4">
+                    <a href="">Home</a> <br>
+                    <a href="">About Us</a> <br>
+                    <a href="">Shop</a>
+                </div>
+                <!-- social media platform links -->
+                <div class="col-sm-12 col-lg-4">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                    <a href="https://pinterest.com" target="_blank">
+                        <i class="fab fa-pinterest" aria-hidden="true"></i>
+                        <span class="sr-only">Pinterest</span>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <p>Contact Info</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- copyright info -->
+                <div class="col footer-copyright">
+                    &copy; Copyright 2021 Boojie Bar
+                </div>
+            </div>
+        </footer>
 
         {% block postloadjs %}
         {% endblock %}
