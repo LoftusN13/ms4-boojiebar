@@ -20,13 +20,19 @@ body {
     padding-top: 0;
 }
 
-#topnav {
+#topnav,
+.main-nav {
     background-color: #151513;
     color: #FFFCF2;
 }
 
 #topnav a,
 #topnav i {
+    color: #FFFCF2;
+}
+
+.main-nav a {
+    text-decoration: none;
     color: #FFFCF2;
 }
 
