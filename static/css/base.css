@@ -35,6 +35,9 @@ body {
     text-decoration: none;
     color: #FFFCF2;
 }
+.navbar .navbar-toggler-icon {
+    color: #FFFCF2;
+}
 
 /*-------------------------Footer----------------------- */
 .footer-section {
