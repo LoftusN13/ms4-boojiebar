@@ -28,6 +28,7 @@ This website has been created as my submission for Milestone Project 4 for the C
     - [Technologies](#technologies)
  - [**Testing**](#testing)
  - [**Deployment**](#deployment)
+    - [Creating the Project](#creating-the-project)
  - [**Credits**](#credits)
     - [Content](#content)
     - [Code](#code)
@@ -263,15 +264,23 @@ Font Awesome will provide all icons contained on the site. Icons will help users
 ---
 ## <p align="center">**Technologies Used**</p>
 ### **Languages**
+- HTML
+- CSS
+- JavaScript
+- Python
 
 ### **Technologies**
+- [Adobe Photoshop](https://www.adobe.com/ie/products/illustrator.html) - used to resize product images.
 - [Balsamiq](https://balsamiq.com/) - used to create wireframes.
+- [Bootstrap](https://getbootstrap.com/) - used throughout the site for responsive layouts and styling.
 - [Canva](https://www.canva.com/) - used to create the site logo.
 - [Coolors](https://coolors.co/) - used for choosing colour scheme.
 - [Font Awesome](https://fontawesome.com/) - used for all icons seen on the site.
 - [Git](https://git-scm.com/) - version control software used to commit and push code to GitHub.
 - [GitHub](https://github.com/) - hosting site used to store the source code of the site.
 - [GitPod](https://www.gitpod.io/) - IDE used to develop the site.
+- [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used for inspecting various page elements and identifying any layout issues/bugs. 
+- [Google Fonts](https://fonts.google.com/specimen/Montserrat) - used to import Montserrat and Raleway fonts.
 - [TingPNG](https://tinypng.com/) - used to resize some images for web.
 
 ---
@@ -280,19 +289,29 @@ Font Awesome will provide all icons contained on the site. Icons will help users
 
 ---
 ## <p align="center">**Deployment**</p>
-
+### **Creating the Project**
+This project used the Code Institute's student [template](https://github.com/Code-Institute-Org/gitpod-full-template). A new repository named **ms4-boojiebar**
+was created which included all branches from the template. The project was developed using the IDE [GitPod](https://www.gitpod.io/). Version control software [Git](https://git-scm.com/) was used to commit and push the code to 
+[GitHub](https://github.com/) where it was stored. The following commands were used for this:
+- **git add** ***filename/directory*** - This command adds files/directories to the staging area to be committed.
+- **git commit -m** *"message here"* - This command commits files/directories to the repository. Commit messages should clearly explain the update being committed.
+- **git push** - This command pushes all committed updates/changes into the GitHub repository.
 
 ---
 ## <p align="center">**Credits**</p>
 ### **Content**
-- 
+- All products contained on the site are sourced from [Cocktail Emporium](https://www.cocktailemporium.com/) and [Urban Outfitters](https://www.urbanoutfitters.com/).
+    - Links to all used products can be found [here]().
 
 ### **Media**
 - Site logo created by me using [Canva](https://www.canva.com/).
-- Hero image on landing page sourced from *romandebree* on [Canva](https://www.canva.com/media/MADcAZGE6Ps).
+- All product images are sourced from [Cocktail Emporium](https://www.cocktailemporium.com/) and [Urban Outfitters](https://www.urbanoutfitters.com/).
+    - Links can be found [here](). 
+
 
 ### **Code**
-- 
+- Code for hero image on landing page taken and adapted from [w3schools.com](https://www.w3schools.com/howto/howto_css_hero_image.asp).
+- Code Institute's Boutique Ado module was a very useful resource and provided the foundation for this project.
  
 ### **Acknowledgements**
 -
