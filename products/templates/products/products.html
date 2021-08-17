@@ -24,7 +24,34 @@
                 <div class="row"></div>
 
                 <div class="row">
-                    
+                    {% for product in products %}
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card h-100">
+                                {% if product.image %}
+                                    <a href="">
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                {% endif %}
+
+                                <div class="card-body">
+                                    <p>{{ product.name }}</p>
+                                </div>
+
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>{{ product.price }}</p>
+                                            {% if product.rating %}
+                                                <small> {{ product.rating }} / 5</small>
+                                            {% else %}
+                                                <small>No Rating</small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
                 
             </div>
