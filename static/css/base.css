@@ -45,6 +45,15 @@ body {
     padding-top: 7.25rem;
 }
 
+.mobile-nav-link {
+    font-size: .7rem;
+    margin-right: .5rem;
+}
+
+.mobile-nav-link #logo {
+    height: 4rem;
+}
+
 /*-------------------------Footer----------------------- */
 .footer-section {
     text-align: center;
@@ -77,6 +86,16 @@ body {
 }
 
 /*-------------------------Media Queries----------------------- */
+@media only screen and (min-width: 576px) {
+    .mobile-nav-link {
+        font-size: 1rem;
+    }
+
+    .mobile-nav-link #logo {
+        height: 5rem;
+    }
+}
+
 @media only screen and (min-width: 992px) {
     .header-container {
         padding-top: 10.25rem;
