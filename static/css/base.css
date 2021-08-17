@@ -77,3 +77,8 @@ body {
 }
 
 /*-------------------------Media Queries----------------------- */
+@media only screen and (min-width: 992px) {
+    .header-container {
+        padding-top: 10.25rem;
+    }
+}
