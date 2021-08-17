@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /*-------------------------General----------------------- */
-html {
+html,
+body {
     height: 100%;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
+    color: #151513;
 }
 
 
@@ -52,34 +54,22 @@ body {
 }
 
 /*-------------------------Home Page----------------------- */
-#overlay {
-    top: 0;
-    left: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#overlay h1 {
-    color: #FFFCF2;
-    font-weight: 300;
-}
-
-.hero-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+.hero-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/hero-img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
-}
-
-.hero-image {
-    width: 100%;
     height: 100%;
-    background: url("/media/hero-img.png") no-repeat center center fixed;
-}
+  }
+  
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFCF2;
+  }
 
 /*-------------------------Media Queries----------------------- */
