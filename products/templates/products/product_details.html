@@ -12,7 +12,7 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-md-6">
                 <div class="img-container">
                     {% if product.image %}
                         <a href="{{ product.image_url }}" target="_blank">
@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-md-6">
                 <div class="details-container">
                     <h3>{{ product.name }}</h3>
                     <p>${{ product.price }}</p>
