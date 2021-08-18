@@ -28,16 +28,19 @@ body {
     color: #FFFCF2;
 }
 
-#topnav a,
-#topnav i {
+#topnav p,
+#topnav i,
+.navbar .navbar-toggler-icon,
+a.dropdown-item {
     color: #FFFCF2;
+}
+
+a.dropdown-item:hover {
+    color: #151513;
 }
 
 .main-nav a {
     text-decoration: none;
-    color: #FFFCF2;
-}
-.navbar .navbar-toggler-icon {
     color: #FFFCF2;
 }
 
@@ -52,6 +55,14 @@ body {
 
 .mobile-nav-link #logo {
     height: 4rem;
+}
+
+.nav-item {
+    padding: 0 1rem;
+}
+
+.dropdown-menu {
+    background-color: #151513;
 }
 
 /*-------------------------Footer----------------------- */
