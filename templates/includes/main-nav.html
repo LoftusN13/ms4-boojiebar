@@ -17,10 +17,10 @@
                 Barware
             </a>
             <div class="dropdown-menu" aria-labelledby="barware-link">
-                <a href="" class="dropdown-item">Shakers</a>
-                <a href="" class="dropdown-item">Tools</a>
-                <a href="" class="dropdown-item">Bar Sets</a>
-                <a href="s" class="dropdown-item">All Barware</a>
+                <a href="{% url 'products' %}?category=shakers" class="dropdown-item">Shakers</a>
+                <a href="{% url 'products' %}?category=tools" class="dropdown-item">Tools</a>
+                <a href="{% url 'products' %}?category=bar_sets" class="dropdown-item">Bar Sets</a>
+                <a href="{% url 'products' %}?category=shakers,tools,bar_sets" class="dropdown-item">All Barware</a>
             </div>
         </li>
 
@@ -29,10 +29,10 @@
                 Glassware
             </a>
             <div class="dropdown-menu" aria-labelledby="glassware-link">
-                <a href="" class="dropdown-item">Cocktails</a>
-                <a href="" class="dropdown-item">Novelty</a>
-                <a href="" class="dropdown-item">Serving</a>
-                <a href="" class="dropdown-item">All Glassware</a>
+                <a href="{% url 'products' %}?category=cocktails" class="dropdown-item">Cocktails</a>
+                <a href="{% url 'products' %}?category=novelty" class="dropdown-item">Novelty</a>
+                <a href="{% url 'products' %}?category=serving" class="dropdown-item">Serving</a>
+                <a href="{% url 'products' %}?category=cocktails,novelty,serving" class="dropdown-item">All Glassware</a>
             </div>
         </li>
 
@@ -41,9 +41,9 @@
                 Accessories
             </a>
             <div class="dropdown-menu" aria-labelledby="accessories-link">
-                <a href="" class="dropdown-item">Extras</a>
-                <a href="" class="dropdown-item">Books</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=extras" class="dropdown-item">Extras</a>
+                <a href="{% url 'products' %}?category=books" class="dropdown-item">Books</a>
+                <a href="{% url 'products' %}?category=extras,books" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
@@ -52,9 +52,9 @@
                 Décor
             </a>
             <div class="dropdown-menu" aria-labelledby="decor-link">
-                <a href="" class="dropdown-item">Lighting</a>
-                <a href="" class="dropdown-item">Decorations</a>
-                <a href="" class="dropdown-item">All Décor</a>
+                <a href="{% url 'products' %}?category=lighting" class="dropdown-item">Lighting</a>
+                <a href="{% url 'products' %}?category=decorations" class="dropdown-item">Decorations</a>
+                <a href="{% url 'products' %}?category=lighting,decorations" class="dropdown-item">All Décor</a>
             </div>
         </li>
         <li class="nav-item d-block d-lg-none">
