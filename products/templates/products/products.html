@@ -46,7 +46,16 @@
                                 <div class="card-footer">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>€{{ product.price }}</strong></p>
+                                            <p class="mb-1"><strong>€{{ product.price }}</strong></p>
+
+                                            {% if product.category %}
+                                                <small>
+                                                    <a href="{% url 'products' %}?category={{ product.category.name }}">
+                                                        <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
+                                                    </a>
+                                                </small> <br>
+                                            {% endif %}
+
                                             {% if product.rating %}
                                                 <small> 
                                                     <i class="far fa-star"></i> {{ product.rating }} / 5
