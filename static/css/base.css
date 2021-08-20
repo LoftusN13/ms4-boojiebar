@@ -37,10 +37,6 @@ a.dropdown-item:hover {
     color: #FFFCF2;
 }
 
-.header-container {
-    padding-top: 7.25rem;
-}
-
 .mobile-nav-link {
     font-size: .7rem;
     margin-right: .5rem;
@@ -171,9 +167,33 @@ h1 {
 }
 
 /*-------------------------Products Page----------------------- */
+.header-container {
+    padding-top: 6.5rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.product-card-panels {
+    padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.card-body {
+    text-align: center;
+}
+
 
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 576px) {
+    .header-container {
+        padding-top: 7.25rem;
+    }
+
+    .product-card-panels {
+        padding: 1rem 2.5rem 0 2.5rem;
+    }
+
     .mobile-nav-link {
         font-size: 1rem;
     }
@@ -190,6 +210,10 @@ h1 {
 @media only screen and (min-width: 992px) {
     .header-container {
         padding-top: 10.25rem;
+    }
+
+    .product-card-panels {
+        padding: 1rem 4rem 0 4rem;
     }
 
     h1 {
