@@ -5,10 +5,16 @@
                 Home
             </a>
         </li>
-        <li class="nav-item">
-            <a href="{% url 'products' %}" class="nav-link mr-3">
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link mr-3" id="#allproducts-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
+            <div class="dropdown-menu" aria-labelledby="allproducts-link">
+                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item">By Name</a>
+            </div>
 
         </li>
 
