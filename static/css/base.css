@@ -28,13 +28,6 @@ body {
     color: #FFFCF2;
 }
 
-#topnav p,
-#topnav i,
-.navbar .navbar-toggler-icon,
-a.dropdown-item {
-    color: #FFFCF2;
-}
-
 a.dropdown-item:hover {
     color: #151513;
 }
@@ -63,6 +56,29 @@ a.dropdown-item:hover {
 
 .dropdown-menu {
     background-color: #151513;
+}
+
+.navbar-toggler,
+.nav-link,
+.dropdown-item,
+.navbar-collapse i {
+    color: #FFFCF2;
+}
+
+.search-bar-collapse {
+    padding-bottom: 1.5rem;
+}
+
+.nav-link:hover,
+.mobile-nav-link:hover,
+#topnav i:hover,
+.navbar-collapse i:hover {
+    color: #6BDB6B;
+}
+
+.nav-link:focus,
+.mobile-nav-link:focus {
+    color: #6BDB6B;
 }
 
 /*-------------------------Footer----------------------- */
