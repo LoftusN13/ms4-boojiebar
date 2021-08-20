@@ -61,6 +61,7 @@ a.dropdown-item:hover {
 .navbar-toggler,
 .nav-link,
 .dropdown-item,
+.search-bar-icon,
 .navbar-collapse i {
     color: #FFFCF2;
 }
@@ -85,18 +86,24 @@ a.dropdown-item:hover {
 .footer-section {
     text-align: center;
     background-color: #151513;
-    color: #FFFCF2;
+    color: #CCC5B9;
     padding-top: .5rem;
 }
 
 .footer-section a {
     text-decoration: none;
-    color: #FFFCF2;
+    color: #CCC5B9;
 }
 
 .footer-section a i {
     font-size: 1.7rem;
     padding: 1rem 1.5rem;
+}
+
+.footer-section a:hover,
+.footer-section a i:hover {
+    color: #FFFCF2;
+    font-weight: 500;
 }
 
 .footer-copyright {
