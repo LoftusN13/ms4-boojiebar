@@ -183,6 +183,22 @@ h2 {
     text-align: center;
 }
 
+.card-body a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #403D39;
+}
+
+.card-body a:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
+.card-footer {
+    background-color: #CCC5B9;
+    color: #151513;
+}
+
 
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 576px) {
