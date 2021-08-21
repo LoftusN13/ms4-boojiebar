@@ -236,6 +236,17 @@ h2 {
     background-color: #403D39;
 }
 
+.product-number a {
+    text-decoration: none;
+    color: #403D39;
+    font-weight: 500;
+}
+
+.product-number a:hover {
+    color: #151513;
+    font-weight: 600;
+}
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 576px) {
     .header-container {
@@ -256,6 +267,15 @@ h2 {
 
     h1 {
         font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .sort-box {
+        padding-right: 3rem;
+    }
+    .product-number {
+        padding-left: 3rem;
     }
 }
 

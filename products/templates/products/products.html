@@ -28,8 +28,8 @@
             <div class="col products-container p-4">
                 <div class="row">
                     <div class="col">
-                        <div>
-                            <select id="sort-select">
+                        <div class="text-center text-md-end sort-box pb-3 pb-md-0">
+                            <select id="sort-select" >
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -40,7 +40,7 @@
                             </select>
                         </div>
                     </div>
-                    <div>
+                    <div class="text-center text-md-start product-number">
                         <p>
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
                                 <span><a href="{% url 'products' %}">All Products</a> | </span>
