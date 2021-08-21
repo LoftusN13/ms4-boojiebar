@@ -51,7 +51,7 @@
                     <p class="pt-4">{{ product.description }}</p>
                 </div>
 
-                <form class="form ps-4" action="" method="POST">
+                <form class="form ps-4" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12 pb-4">
