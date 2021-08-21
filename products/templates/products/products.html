@@ -103,10 +103,22 @@
             </div>
         </div>
     </div>
+
+    <div class="top-btn btn">
+        <a class="top-link">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
+    <script type="text/javascript">
+		$('.top-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+
     <script type="text/javascript">
         $('#sort-select').change(function() {
             let selector = $(this);
