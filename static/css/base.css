@@ -209,6 +209,15 @@ h2 {
     font-weight: 600;
 }
 
+.category-link {
+    text-decoration: none;
+    color: #403D39;
+}
+
+.category-link .btn:hover {
+    color: #151513;
+    font-weight: 500;
+}
 
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 576px) {

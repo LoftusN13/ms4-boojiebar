@@ -11,17 +11,44 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
+        <div class="row text-center">
             <div class="col">
                 <h2>
                     Products
                 </h2>
+                {% for c in current_categories %}
+                    <a class="category-link" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="btn">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
             </div>
         </div>
 
         <div class="row">
             <div class="col products-container p-4">
-                <div class="row"></div>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <select class="">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span><a href="{% url 'products' %}">All Products</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Product(s){% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
 
                 <div class="row product-card-panels">
                     {% for product in products %}
