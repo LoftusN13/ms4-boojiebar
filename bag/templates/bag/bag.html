@@ -22,7 +22,9 @@
         <div class="row shopping-bag">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive"></div>
+                    <div class="table-responsive">
+                        {{ bag_items }}
+                    </div>
                 {% else %}
                     <p class="text-center">Your bag is empty.</p>
                     <a href="{% url 'products' %}" class="btn continue-btn">
