@@ -274,6 +274,28 @@ h2 {
     font-weight: 600;
 }
 
+.add-btn {
+    background-color: #403D39;
+    color: #FFFCF2;
+    font-size: .9rem;
+}
+
+.add-btn:hover {
+    background-color: #151513;
+    color: #FFFCF2;
+}
+
+.product-details .continue-btn {
+    color: #403D39;
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+.product-details .continue-btn:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
 /*-------------------------Shopping Bag Page----------------------- */
 .shopping-bag {
     padding-top: 2rem;
@@ -327,7 +349,7 @@ h2 {
     }
     .details-container {
         padding-top: 1rem;
-        padding-bottom: 4rem;
+        padding-bottom: 2rem;
     }
 }
 
