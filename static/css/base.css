@@ -255,6 +255,25 @@ h2 {
     font-weight: 600;
 }
 
+/*-------------------------Product Details Page----------------------- */
+.product-details {
+    padding: 1rem;
+}
+
+.details-container {
+    padding: 0 2rem 1rem 2rem;
+}
+
+.details-container a {
+    text-decoration: none;
+    color: #151513;
+}
+
+.details-container a:hover {
+    color: #403D39;
+    font-weight: 600;
+}
+
 /*-------------------------Shopping Bag Page----------------------- */
 .shopping-bag {
     padding-top: 2rem;
@@ -302,6 +321,13 @@ h2 {
     }
     .product-number {
         padding-left: 3rem;
+    }
+    .product-details {
+        margin: 1rem 4rem;
+    }
+    .details-container {
+        padding-top: 1rem;
+        padding-bottom: 4rem;
     }
 }
 

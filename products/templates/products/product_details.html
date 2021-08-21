@@ -11,9 +11,10 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="img-container">
+        <div class="row align-items-center product-details pt-md-1 mt-md-0">
+            <h3 class="text-center pb-lg-3">{{ product.name }}</h3>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="img-container pb-2">
                     {% if product.image %}
                         <a href="{{ product.image_url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -26,16 +27,28 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 col-lg-8">
                 <div class="details-container">
-                    <h3>{{ product.name }}</h3>
-                    <p>${{ product.price }}</p>
-                    {% if product.rating %}
-                        <small>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small>No Rating</small>
+                    <p class="mb-1"><strong>€{{ product.price }}</strong></p>
+
+                    {% if product.category %}
+                        <small>
+                            <a href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
+                            </a>
+                        </small> <br>
                     {% endif %}
-                    <p>{{ product.description }}</p>
+
+                    {% if product.rating %}
+                        <small>
+                            <i class="far fa-star"></i> {{ product.rating }} / 5
+                        </small>
+                    {% else %}
+                        <small>
+                            <i class="far fa-star"></i> No Rating
+                        </small>
+                    {% endif %}
+                    <p class="pt-4">{{ product.description }}</p>
                 </div>
             </div>
         </div>
