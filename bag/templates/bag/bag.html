@@ -2,10 +2,38 @@
 {% load static %}
 
 {% block page_header %}
-
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>
+                    Shopping Bag
+                </h2>
+            </div>
+        </div>
 
+        <div class="row shopping-bag">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive"></div>
+                {% else %}
+                    <p class="text-center">Your bag is empty.</p>
+                    <a href="{% url 'products' %}" class="btn continue-btn">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span>Continue Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
     
 {% endblock %}

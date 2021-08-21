@@ -247,6 +247,24 @@ h2 {
     font-weight: 600;
 }
 
+/*-------------------------Shopping Bag Page----------------------- */
+.shopping-bag {
+    padding-top: 2rem;
+}
+
+.shopping-bag a {
+    color: #403D39;
+    font-weight: 400;
+}
+.shopping-bag a:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
+.continue-btn {
+    padding: 1rem;
+}
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 576px) {
     .header-container {
