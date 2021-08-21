@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="hero-img">
+        <div class="hero-text">
+            <h1>500 - Server Error</h1>
+            <h4>
+                <p>
+                    Uh-Oh! Something went wrong. <br>
+                    Return to the home page using the button below.
+                </p>
+                <a href="{% url 'home' %}" class="shop-btn btn">Home</a>
+            </h4>
+        </div>
+    </div>
+{% endblock %}
