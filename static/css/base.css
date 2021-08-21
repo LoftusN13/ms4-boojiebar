@@ -78,6 +78,14 @@ a.dropdown-item:hover {
     color: #6BDB6B;
 }
 
+#delivery-banner {
+    background-color: #403D39;
+    color: #FFFCF2;
+    padding: .5rem;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: .1rem;
+}
+
 /*-------------------------Footer----------------------- */
 .footer-section {
     text-align: center;
@@ -168,7 +176,7 @@ h1 {
 
 /*-------------------------Products Page----------------------- */
 .header-container {
-    padding-top: 6.5rem;
+    padding-top: 7.5rem;
 }
 
 h2 {
@@ -268,7 +276,7 @@ h2 {
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 576px) {
     .header-container {
-        padding-top: 7.25rem;
+        padding-top: 8.25rem;
     }
 
     .product-card-panels {
@@ -299,7 +307,7 @@ h2 {
 
 @media only screen and (min-width: 992px) {
     .header-container {
-        padding-top: 10.25rem;
+        padding-top: 12rem;
     }
 
     .product-card-panels {

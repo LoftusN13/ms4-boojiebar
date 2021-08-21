@@ -121,7 +121,14 @@
                   {% include 'includes/main-nav.html' %}
               </nav>
             </div>
-            <!-- End of TOP NAVIGATION BAR -->    
+            <!-- End of TOP NAVIGATION BAR -->
+
+            <!-- delivery banner -->
+            <div id="delivery-banner" class="row text-center">
+                <div class="col">
+                    <h6 class="mb-0">Free delivery on orders over €{{ free_delivery_threshold }}!</h6>                
+                </div>            
+            </div>  
         </header>
 
         {% if messages %}
