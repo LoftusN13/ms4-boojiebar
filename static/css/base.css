@@ -325,6 +325,18 @@ h2 {
     font-size: .75rem;
 }
 
+.update-link i,
+.remove-item i {
+    color: #403D39;
+}
+
+
+.update-link i:hover,
+.remove-item i:hover {
+    color: #151513;
+    font-weight: 600;
+}
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
     .shopping-bag {
