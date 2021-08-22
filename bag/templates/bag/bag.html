@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -95,7 +96,7 @@
                             </div>
 
                             <div class="col">
-                                <p>€{{ item.product.price }}</p>
+                                <p>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </div>
                         </div>
                     {% endfor %}
