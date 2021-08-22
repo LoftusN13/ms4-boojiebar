@@ -19,23 +19,91 @@
             </div>
         </div>
 
-        <div class="row shopping-bag">
-            <div class="col">
-                {% if bag_items %}
-                    <div class="table-responsive">
-                        {{ bag_items }}
+        {% if bag_items %}
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h5 class="text-center">{{ product_count }} Item(s) in my bag:</h5>
+                    
+                    <div class="row text-center">
+                        <div class="col">
+                            <h6>Image</h6>
+                        </div>
+                        <div class="col">
+                            <h6>Product</h6>
+                        </div>
+                        <div class="col">
+                            <h6>Quantity</h6>
+                        </div>
+                        <div class="col">
+                            <h6>Price</h6>
+                        </div>
                     </div>
-                {% else %}
-                    <p class="text-center">Your bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn continue-btn">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span>Continue Shopping</span>
-                    </a>
-                {% endif %}
+
+                    {% for item in bag_items %}    
+                        <div class="row text-center">
+                            <div class="col">
+                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"">
+                            </div>
+
+                            <div class="col">
+                                <p>{{ item.product.name }}</p>
+                            </div>
+
+                            <div class="col">
+                                <p>{{ item.quantity }}</p>
+                            </div>
+
+                            <div class="col">
+                                <p>€{{ item.product.price }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <h5 class="text-center">Summary:</h5>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                Product Total: €{{ total|floatformat:2 }}
+                            </p>
+                        </div>
+
+                        <div class="col-12">
+                            <p>
+                                Delivery Fee: €{{ delivery|floatformat:2 }}
+                            </p>
+                        </div>
+
+                        <div class="col-12">
+                            <p>
+                                <strong>Grand Total</strong>: €{{ grand_total|floatformat:2 }}
+                            </p>
+                        </div>
+
+                        <div class="col-12">
+                            <a href="{% url 'products' %}" class="btn">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span>Continue Shopping</span>
+                            </a>
+
+                            <input type="submit" class="btn" value="Checkout">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        {% else %}
+            <p class="text-center">Your bag is empty.</p>
+            <a href="{% url 'products' %}" class="btn continue-btn">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>Continue Shopping</span>
+            </a>
+        {% endif %}
     </div>
     
 {% endblock %}
