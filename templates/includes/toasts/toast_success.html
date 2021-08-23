@@ -28,27 +28,27 @@
                 </div>
               </div>
             {% endfor %}
+          </div>
 
-              <div class="row">
-                <div class="col">
-                    <strong><p class="">
-                        Total{% if free_delivery_delta > 0 %} (Excl. Delivery){% endif %}: 
-                        <span class="float-right">${{ total|floatformat:2 }}</span>
-                    </p></strong>
-                    {% if free_delivery_delta > 0 %}
-                        <p class="bg-warning text-center">
-                            Spend <strong>€{{ free_delivery_delta }}</strong> more to get free delivery!
-                        </p>
-                    {% endif %}
-                    <a href="{% url 'view_bag' %}" class="btn checkout-btn w-100">
-                      <span class="icon">
-                        <i class="fas fa-shopping-bag"></i>
-                      </span>
-                      <span> View Shopping Bag</span>
-                    </a>
-                </div>
+          <div class="row">
+            <div class="col">
+              <strong><p class="">
+                  Total{% if free_delivery_delta > 0 %} (Excl. Delivery){% endif %}: 
+                  <span class="float-right">${{ total|floatformat:2 }}</span>
+              </p></strong>
+              {% if free_delivery_delta > 0 %}
+                  <p class="bg-warning text-center p-2">
+                      Spend <strong>€{{ free_delivery_delta }}</strong> more to get free delivery!
+                  </p>
+              {% endif %}
+              <a href="{% url 'view_bag' %}" class="btn checkout-btn w-100">
+                <span class="icon">
+                  <i class="fas fa-shopping-bag"></i>
+                </span>
+                <span> View Shopping Bag</span>
+              </a>
             </div>
-        </div>
+          </div>
         {% endif %}
     </div>
   </div>

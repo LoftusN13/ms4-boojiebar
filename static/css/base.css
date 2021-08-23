@@ -365,6 +365,12 @@ h2 {
     font-family: "Raleway", sans-serif;
 }
 
+.bag-notifaction-wrapper {
+    height: 10rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
