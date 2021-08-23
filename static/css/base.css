@@ -337,6 +337,35 @@ h2 {
     font-weight: 600;
 }
 
+/*-------------------------Toasts----------------------- */
+.message-container {
+    position: fixed;
+    top: 4rem;
+    right: .5rem;
+    z-index: 99999999999;
+    width: 15rem;
+}
+
+.toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: .25rem;
+}
+
+.toast-header {
+    color: #151513;
+    background-color: #CCC5B9;
+}
+
+.toast-body {
+    background-color: #FFFCF2;
+    color: #403D39;
+    font-family: "Raleway", sans-serif;
+}
+
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
     .shopping-bag {
@@ -366,6 +395,10 @@ h2 {
 
     h1 {
         font-size: 2rem;
+    }
+
+    .message-container {
+        top: 4.8rem;
     }
 }
 
@@ -400,5 +433,10 @@ h2 {
 
     .hero-text {
         padding-top: 8rem;
+    }
+
+    .message-container {
+        top: 5rem;
+        width: 20rem;
     }
 }
