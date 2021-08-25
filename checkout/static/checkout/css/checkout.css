@@ -1,0 +1,38 @@
+.checkout .form-group {
+    padding: .25rem 0;
+}
+
+.adjust-bag-btn {
+    color: #403D39;
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.adjust-bag-btn:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
+.complete-btn {
+    background-color: #403D39;
+    color: #FFFCF2;
+    font-size: .9rem;
+}
+
+.complete-btn:hover {
+    background-color: #151513;
+    color: #FFFCF2;
+}
+
+.text-info {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-info:hover {
+    font-weight: 400;
+}
+
+.product-total {
+    text-align: right;
+}

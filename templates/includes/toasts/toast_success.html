@@ -34,7 +34,7 @@
             <div class="col">
               <strong><p class="">
                   Total{% if free_delivery_delta > 0 %} (Excl. Delivery){% endif %}: 
-                  <span class="float-right">${{ total|floatformat:2 }}</span>
+                  <span class="float-right">€{{ total|floatformat:2 }}</span>
               </p></strong>
               {% if free_delivery_delta > 0 %}
                   <p class="bg-warning text-center p-2">

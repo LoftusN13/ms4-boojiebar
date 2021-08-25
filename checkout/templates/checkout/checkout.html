@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -23,18 +24,86 @@
             </div>
         </div>
 
-        <div class="row checkout">
+        <div class="row checkout p-4">
+            <div class="col-12 col-lg-6 order-lg-last">
+                <p>Order Summary ({{ product_count }}):</p>
+
+                <div class="row">
+                    <div class="col-3">
+                        
+                    </div>
+                    <div class="col-6">
+                        <p class="small">Item:</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="small">Subtotal:</p>
+                    </div>
+                </div>
+
+                <div class="">
+                    {% for item in bag_items %}
+                    <div class="row">
+                        <div class="col-3">
+                            {% if item.product.image %}
+                            <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            {% else %}
+                            <img class="w-100" src="{{ MEDIA_URL }}/media/no-image.png" alt="{{ item.product.name }}">
+                            {% endif %}
+                        </div>
+
+                        <div class="col-6">
+                            <p class="my-0">{{ item.product.name }}</p>
+                            <p class="small">Quantity: {{ item.quantity }}</p>
+                        </div>
+
+                        <div class="col-3">
+                            <p>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <hr>
+
+                <div class="row product-total">
+                    <div class="col-12">
+                        <p>
+                            Product Total: €{{ total|floatformat:2 }}
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <p>
+                            Delivery Fee: €{{ delivery|floatformat:2 }}
+                        </p>
+                    </div>
+
+                    <div class="col-12">
+                        <p class="mb-0">
+                            <strong>Grand Total</strong>: €{{ grand_total|floatformat:2 }}
+                        </p>
+                    </div>
+
+                    <div class="col-12">
+                        {% if free_delivery_delta > 0 %}
+                            <p class="text-center mt-1">
+                                Enjoy free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+                <hr class="d-lg-none mb-4">
+            </div>
+
             <div class="col-12 col-lg-6">
                 <p class="text-center">Fill out the form below to complete your order!</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
-                    <fieldset class="">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Details:</legend>
+                    <fieldset class="mb-4">
+                        <legend class="fieldset-label">Details:</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
 
-                    <fieldset class="">
+                    <fieldset class="mb-4">
                         <legend class="">Delivery:</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.street_address1 | as_crispy_field }}
@@ -43,7 +112,7 @@
                         {{ order_form.county | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
-                        <div class="">
+                        <div class="pt-2">
 							{% if user.is_authenticated %}
 								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
@@ -55,8 +124,8 @@
 							{% endif %}
 						</div>
                     </fieldset>
-                    <fieldset class="px-3">
-                        <legend class="fieldset-label">Payment</legend>
+                    <fieldset class="mb-4">
+                        <legend class="fieldset-label">Payment:</legend>
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
 
@@ -64,20 +133,20 @@
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     </fieldset>
 
-                    <div class="submit-button text-right mt-5 mb-2">                    
-						<a href="{% url 'view_bag' %}" class="btn">
+                    <div class="submit-button text-right my-2">                    
+						<a href="{% url 'view_bag' %}" class="btn adjust-bag-btn ps-0">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
 							<span class="">Adjust Bag</span>
 						</a>
-						<button id="submit-button" class="btn">
-							<span class="">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
+						<button id="submit-button" class="btn complete-btn">
+                            <span class="icon">
+								<i class="fas fa-check-circle"></i>
 							</span>
+							<span class="">Complete Order</span>
 						</button>
-						<p class="small text-danger my-0">
+						<p class="small text-danger my-0 pt-2">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
