@@ -36,3 +36,28 @@
 .product-total {
     text-align: right;
 }
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 2.5rem;
+  padding: .625rem .75rem;
+  background-color: white;
+  border: .0625rem solid #ced4da;
+  border-radius: .25rem;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+    box-shadow: 0 .0625rem .19rem 0 #cfd7df;
+    border-color: #86b7fe;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
