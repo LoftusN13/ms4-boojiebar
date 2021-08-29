@@ -86,6 +86,10 @@ a.dropdown-item:hover {
     letter-spacing: .1rem;
 }
 
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
 /*-------------------------Footer----------------------- */
 .footer-section {
     text-align: center;
@@ -371,6 +375,65 @@ h2 {
     overflow-y: auto;
 }
 
+/*-------------------------Allauth Forms----------------------- */
+.allauth-form-inner-content {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.allauth-form-inner-content label {
+    float: left;
+}
+
+.allauth-form-inner-content p {
+    padding-top: 1rem;
+}
+
+.allauth-form-inner-content a {
+    text-decoration: none;
+    color: #403D39;
+    font-weight: 600;
+}
+
+.allauth-form-inner-content a:hover {
+    color: #151513;
+    font-weight: 700;
+}
+
+.allauth-form-inner-content .form-group {
+    padding: .5rem 0;
+}
+
+.allauth-form-inner-content .home-btn {
+    color: #403D39;
+    font-weight: 400;
+}
+
+.allauth-form-inner-content .home-btn:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
+.allauth-form-inner-content button {
+    background-color: #403D39;
+    color: #FFFCF2;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    border: none;
+}
+
+.allauth-form-inner-content button:hover {
+    background-color: #151513;
+    color: #FFFCF2;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
 
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
@@ -422,6 +485,10 @@ h2 {
         padding-top: 1rem;
         padding-bottom: 2rem;
     }
+    .allauth-form-inner-content {
+        margin-right: 6rem;
+        margin-left: 6rem;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -444,5 +511,9 @@ h2 {
     .message-container {
         top: 5rem;
         width: 20rem;
+    }
+    .allauth-form-inner-content {
+        margin-right: 12rem;
+        margin-left: 12rem;
     }
 }
