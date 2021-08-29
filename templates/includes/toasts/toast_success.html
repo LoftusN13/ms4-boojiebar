@@ -8,7 +8,7 @@
         {{ message }}
         <hr>
 
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
           <p>{{ product_count }} Item(s) In Your Bag:</p>
 
           <div class="bag-notifaction-wrapper">

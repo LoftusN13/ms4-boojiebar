@@ -1,0 +1,32 @@
+.profile .form-group {
+    padding: .25rem 0;
+}
+
+.profile-form-input .form-control {
+    color: #151513;
+}
+
+.profile-form-input::placeholder {
+    color: #aab7c4;
+}
+
+.profile-btn {
+    background-color: #403D39;
+    color: #FFFCF2;
+    font-size: .9rem;
+    float: right;
+}
+
+.profile-btn:hover {
+    background-color: #151513;
+    color: #FFFCF2;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #151513;
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
+}

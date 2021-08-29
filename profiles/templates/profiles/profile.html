@@ -17,11 +17,35 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>
+                <h2 class="mb-0">
                     My Profile
                 </h2>
             </div>
         </div>
+
+        <div class="row profile p-4">
+            <p class="text-center pb-2"><em>User: {{ user }}</em></p>
+
+            <div class="col-12 col-lg-6">
+                <p class="text-center">Default Delivery information:</p>
+                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn profile-btn my-2">
+                        <i class="fas fa-pencil-alt"></i> Update
+                    </button>
+                </form>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <p class="text-center">Order History:</p>
+                {{ orders }}
+            </div>
+        </div>
     </div>
-    
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
