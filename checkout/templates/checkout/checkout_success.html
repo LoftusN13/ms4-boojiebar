@@ -202,12 +202,21 @@
                 </div>
                 <div class="row text-center pt-4">
                     <div class="col">
-                        <a href="{% url 'products' %}" class="btn complete-btn">
-                            <span class="icon">
-                                <i class="fas fa-store-alt"> </i>
-                            </span>
-                            <span>Back to Store</span>
-                        </a>
+                        {% if from_profile %}
+                            <a href="{% url 'profile' %}" class="btn complete-btn">
+                                <span class="icon">
+                                    <i class="far fa-user"></i>
+                                </span>
+                                <span>Back to Profile</span>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'products' %}" class="btn complete-btn">
+                                <span class="icon">
+                                    <i class="fas fa-store-alt"> </i>
+                                </span>
+                                <span>Back to Store</span>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>     

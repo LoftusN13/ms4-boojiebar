@@ -39,7 +39,49 @@
 
             <div class="col-12 col-lg-6">
                 <p class="text-center">Order History:</p>
-                {{ orders }}
+
+                <div class="row text-center pt-2 pb-4">
+                    <div class="col">
+                        <h6>Number:</h6>
+                    </div>
+                    <div class="col">
+                        <h6>Date:</h6>
+                    </div>
+                    <div class="col">
+                        <h6>Items:</h6>
+                    </div>
+                    <div class="col">
+                        <h6>Total:</h6>
+                    </div>
+                </div>
+
+                {% for order in orders %}
+                    <div class="row text-center py-2 align-items-center order-history">
+                        <div class="col">
+                            <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                {{ order.order_number|truncatechars:6 }}
+                            </a>
+                        </div>
+
+                        <div class="col">
+                            {{ order.date }}
+                        </div>
+
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                {% for item in order.lineitems.all %}
+                                    <li class="small">
+                                        {{ item.product.name }} x{{ item.quantity }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            €{{ order.grand_total }}
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
