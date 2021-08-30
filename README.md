@@ -2,7 +2,7 @@
 
 # <p align="center">**MS4: Boojie Bar**</p>
 
- ### View the live project [here.]()
+ ### View the live project [here.](https://ms4-boojiebar.herokuapp.com/)
 
 This website has been created as my submission for Milestone Project 4 for the Code Institute. *Boojie Bar* is an e-commerce website specialising in the sale of cocktail equipment and home-bar decor. The website is designed to be responsive and accessible on a variety of devices, allowing potential customers to easily browse and/or purchase the available products. 
 
@@ -29,6 +29,8 @@ This website has been created as my submission for Milestone Project 4 for the C
  - [**Testing**](#testing)
  - [**Deployment**](#deployment)
     - [Creating the Project](#creating-the-project)
+    - [Deploying to Heroku](#deploying-to-heroku)
+    - [Deploying Locally](#deploying-locally)
  - [**Credits**](#credits)
     - [Content](#content)
     - [Code](#code)
@@ -266,26 +268,51 @@ Font Awesome will provide all icons contained on the site. Icons will help users
 ### **Languages**
 - HTML
 - CSS
-- JavaScript
-- Python
+- JavaScript/jQuery
+- Python (with the following);
+    - asgiref==3.4.1
+    - boto3==1.18.31
+    - botocore==1.21.31
+    - dj-database-url==0.5.0
+    - Django==3.2.6
+    - django-allauth==0.41.0
+    - django-countries==7.2.1
+    - django-crispy-forms==1.12.0
+    - django-storages==1.11.1
+    - gunicorn==20.1.0
+    - jmespath==0.10.0
+    - oauthlib==3.1.1
+    - Pillow==8.3.1
+    - psycopg2-binary==2.9.1
+    - python3-openid==3.2.0
+    - pytz==2021.1
+    - requests-oauthlib==1.3.0
+    - s3transfer==0.5.0
+    - sqlparse==0.4.1
+    - stripe==2.60.0
 
 ### **Technologies**
 - [Adobe Photoshop](https://www.adobe.com/ie/products/illustrator.html) - used to resize product images.
+- [Amazon Web Services](https://aws.amazon.com/) - used to store static files and images.
 - [Balsamiq](https://balsamiq.com/) - used to create wireframes.
 - [Bootstrap](https://getbootstrap.com/) - used throughout the site for responsive layouts and styling.
 - [Canva](https://www.canva.com/) - used to create the site logo.
 - [Coolors](https://coolors.co/) - used for choosing colour scheme.
+- [Django](https://www.djangoproject.com/) - Python web framework used throughout this project.
+- [Favicon](https://favicon.io/)- used to create site favicons.
 - [Font Awesome](https://fontawesome.com/) - used for all icons seen on the site.
 - [Git](https://git-scm.com/) - version control software used to commit and push code to GitHub.
 - [GitHub](https://github.com/) - hosting site used to store the source code of the site.
 - [GitPod](https://www.gitpod.io/) - IDE used to develop the site.
 - [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used for inspecting various page elements and identifying any layout issues/bugs. 
 - [Google Fonts](https://fonts.google.com/specimen/Montserrat) - used to import Montserrat and Raleway fonts.
+- [Heroku](https://www.heroku.com/) - used to deploy live website.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - used for templating language.
 - [TingPNG](https://tinypng.com/) - used to resize some images for web.
 
 ---
 ## <p align="center">**Testing**</p>
-
+Testing information and content for this project can be found in the [separate TESTING.md](TESTING.md) file.
 
 ---
 ## <p align="center">**Deployment**</p>
@@ -297,21 +324,114 @@ was created which included all branches from the template. The project was devel
 - **git commit -m** *"message here"* - This command commits files/directories to the repository. Commit messages should clearly explain the update being committed.
 - **git push** - This command pushes all committed updates/changes into the GitHub repository.
 
+### **Deploying to Heroku**
+Heroku needs some files in order to know which apps and dependencies are needed:
+- requirements.txt (type command **"pip3 freeze --local > requirements.txt"**).
+- create **Procfile** (ensuring you enter a capital P).
+    - inside type: 'web: gunicorn your-app.wsgi:application'.
+- Add, commit and push.
+
+#### **Create Heroku App:**
+- Create an account or login to [Heroku](https://www.heroku.com/).
+- Click on the *New* button on the top right of your dashboard.
+- Select **Create new app**.
+- Enter your new unique app name.
+- Choose your region.
+- Select **Create app**.
+
+#### **Setup Postgres:**
+- On your new app's Heroku dashboard, select the *Resources* tab.
+- Enter "postgres" into the search box and select **Heroku Postgres**.
+- In *settings.py*; 
+    - comment out DATABASES
+    - import dj_database_url
+    - type in: DATABASES 'default': dj_database_url.parse("your-postgres-url")
+    - migrate the models (*python3 manage.py migrate*)
+    - load data to Postgres (*python3 manage.py loaddata categories* followed by *python3 manage.py loaddata products*)
+    - create a superuser (*python3 manage.py createsuperuser*)
+    - back in *settings.py*, remove "DATABASES 'default': dj_database_url.parse("your-postgres-url")" and un-comment the previously commented-out DATABASES.
+    - Add, commit and push to GitHub.
+    
+#### **Set Environment Variables:**
+- Navigate to your app's *Settings* tab.
+- Under *Config Vars*, click **Reveal Config Vars**.
+- The following need to be added:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - DATABASE_URL
+    - EMAIL_HOST_PASS
+    - EMAIL_HOST_USER
+    - SECRET_KEY
+    - STRIPE_PUBLIC_KEY
+    - STRIPE_SECRET_KEY
+    - STRIPE_WH_SECRET
+    - USE_AWS
+
+#### **Connect to GitHub Repository:**
+- On your new app's page, navigate to the *Deploy* tab.
+- Under *Deployment method*, select **GitHub**.
+- Under *Connect to GitHub* (and making sure your GitHub profile is displayed), enter the name of your repository and click **Search**.
+- Once your repo has been found, click **Connect**.
+
+#### **Automatic Deployment:**
+- Navigate to your app's *Deploy* tab.
+- Under *Automatic deploys*, select the branch you wish to deploy from.
+- Click **Enable Automatic Deploys**.
+
+#### **Amazon Web Services**
+Amazon Web Services ([AWS](https://aws.amazon.com/)) is used to store the static files and images for the app.
+- Create an account.
+- Open **S3** and create a new bucket.
+    - recommend naming bucket the same as Heroku app name.
+    - choose region closest to you.
+    - uncheck box to block public access; bucket must be public.
+- Create S3 Bucket Policy.
+- Create a group.
+- Create an access policy.
+- Create a user.
+
+### **Deploying Locally**
+**Please note** that the project will not run locally without several Environmental Variable Keys. For security reasons, these details are not included in this repository.
+- DEVELOPMENT=True
+- EMAIL_HOST_PASS=SECRET_KEY
+- EMAIL_HOST_USER=email_address
+- SECRET_KEY=SECRET_KEY
+- STRIPE_PUBLIC_KEY=SECRET_KEY
+- STRIPE_SECRET_KEY=SECRET_KEY
+- STRIPE_WH_SECRET=SECRET_KEY
+
+
+In order to make a clone, follow these steps:
+- Log into GitHub.
+- Navigate to the **Repositories** tab.
+- Choose the desired repository.
+- Above the list of files, click on the **Code** drop-down menu.
+- Copy the clone URL under the **HTTPS** tab.
+- Open a terminal window in your IDE of choice.
+- Change the working directory to whichever location you want the cloned directory to be in.
+- Type *git clone* and then paste the URL that you copied earlier.
+- Press enter to create the clone.
+- In your IDE of choice, type *pip install -r requirements.txt* in order to install all required packages for project.
+
 ---
 ## <p align="center">**Credits**</p>
 ### **Content**
 - All products contained on the site are sourced from [Cocktail Emporium](https://www.cocktailemporium.com/) and [Urban Outfitters](https://www.urbanoutfitters.com/).
-    - Links to all used products can be found [here]().
+    - Links to all used products can be found [here](documentation/product-sources.pdf).
 
 ### **Media**
 - Site logo created by me using [Canva](https://www.canva.com/).
+- Hero image by Getty Images on [Canva](https://www.canva.com/media/MAEObAH7gWw).
 - All product images are sourced from [Cocktail Emporium](https://www.cocktailemporium.com/) and [Urban Outfitters](https://www.urbanoutfitters.com/).
-    - Links can be found [here](). 
+    - Links can be found [here](documentation/product-sources.pdf). 
 
 
 ### **Code**
 - Code for hero image on landing page taken and adapted from [w3schools.com](https://www.w3schools.com/howto/howto_css_hero_image.asp).
-- Code Institute's Boutique Ado module was a very useful resource and provided the foundation for this project.
+- Code Institute's **Boutique Ado** module was an extremely useful resource and provided the foundation for this project.
+- [Stack Overflow](https://stackoverflow.com/) was a helpful resource for any minor code issues.
  
 ### **Acknowledgements**
--
+- My mentor, Spencer Barriball for all of his help on this project.
+- Friends and family who viewed the site, providing useful feedback and suggestions.
+- The Slack community for feedback they provided and issues they helped to resolve.
