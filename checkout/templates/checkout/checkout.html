@@ -47,7 +47,7 @@
                             {% if item.product.image %}
                             <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                             {% else %}
-                            <img class="w-100" src="{{ MEDIA_URL }}/media/no-image.png" alt="{{ item.product.name }}">
+                            <img class="w-100" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.name }}">
                             {% endif %}
                         </div>
 
@@ -118,8 +118,8 @@
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
 							{% else %}
 								<label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="">Create an account</a> or 
-                                    <a class="text-info" href="">Sign In</a> to save this information
+                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="text-info" href="{% url 'account_login' %}">Sign In</a> to save this information
                                 </label>
 							{% endif %}
 						</div>
