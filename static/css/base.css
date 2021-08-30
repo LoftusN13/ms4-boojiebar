@@ -435,6 +435,26 @@ h2 {
     color: #aab7c4;
 }
 
+/*-------------------------Add Product----------------------- */
+.add-product .form-group {
+    padding: .25rem 0;
+}
+
+.add-product .btn {
+    float: right;
+    font-size: .9rem;
+}
+
+.add-product .cancel-btn {
+    color: #403D39;
+    font-weight: 400;
+}
+
+.add-product .cancel-btn:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
     .shopping-bag {
