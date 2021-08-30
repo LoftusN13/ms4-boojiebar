@@ -42,10 +42,21 @@
                     {% if product.rating %}
                         <small>
                             <i class="far fa-star"></i> {{ product.rating }} / 5
-                        </small>
+                        </small> <br>
                     {% else %}
                         <small>
                             <i class="far fa-star"></i> No Rating
+                        </small> <br>
+                    {% endif %}
+                    <!-- only allow superuser to have the option to Edit and Delete the product -->
+                    {% if request.user.is_superuser %}
+                        <small class="py-2">
+                            <a href="{% url 'edit_product' product.id %}" class="pe-2 text-success">
+                                <i class="far fa-edit"></i> Edit
+                            </a>
+                            <a href="{% url 'delete_product' product.id %}" class="text-danger">
+                                <i class="far fa-trash-alt"></i> Delete
+                            </a>
                         </small>
                     {% endif %}
                     <p class="pt-4">{{ product.description }}</p>
