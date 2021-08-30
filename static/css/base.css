@@ -178,6 +178,10 @@ h1 {
     padding-top: .5rem;
 }
 
+.hero-text p {
+    color: #FFFCF2;
+}
+
 /*-------------------------Products Page----------------------- */
 .header-container {
     padding-top: 7.5rem;
