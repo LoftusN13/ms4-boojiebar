@@ -440,7 +440,7 @@ h2 {
     padding: .25rem 0;
 }
 
-.add-product .btn {
+.add-product .checkout-btn {
     float: right;
     font-size: .9rem;
 }
@@ -448,6 +448,7 @@ h2 {
 .add-product .cancel-btn {
     color: #403D39;
     font-weight: 400;
+    float: right;
 }
 
 .add-product .cancel-btn:hover {
@@ -455,6 +456,32 @@ h2 {
     font-weight: 500;
 }
 
+/*-------------------------Product Forms----------------------- */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.widget-btn {
+    background-color: #403D39;
+    color: #FFFCF2;
+    font-size: .8rem;
+}
+
+ .widget-btn:hover {
+    background-color: #151513;
+    color: #FFFCF2;
+}
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
     .shopping-bag {
