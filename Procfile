@@ -1,0 +1,1 @@
+web: gunicorn boojie_bar.wsgi:application
