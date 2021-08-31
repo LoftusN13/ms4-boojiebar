@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col">
+                <h2>
+                    Blogs
+                </h2>
+                <p class="mb-0">
+                    Here at Boojie Bar, we love staying up to date with all the latest cocktail trends and recipes! <br>
+                    Check out some of our amazing blog posts below!
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col blogs-container p-md-4">
+                <div class="row blog-card-panels">
+                    {% for blog in blogs %}
+                        <div class="col-12">
+                            <div class="card h-100">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        {% if blog.image %}
+                                            <a href="">
+                                                <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                            </a>
+                                            {% else %}
+                                                <a href="">
+                                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ blog.title }}">
+                                                </a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="card-body pb-0">
+                                            <a href="">
+                                                <p>
+                                                    <strong>{{ blog.title }}</strong>
+                                                </p>
+                                            </a>
+                                            <small>By {{ blog.author }} | {{ blog.created_at}}</small>
+                                            <p class=" mt-2">
+                                                {{ blog.body_text|slice:':150' }} ...
+                                            </p>
+                                            <a href="" class="btn blog-btn">
+                                                <span>Read More </span>
+                                                <span class="icon">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>   
+            </div>
+        </div>
+    </div>
+
+    <div class="top-btn btn">
+        <a class="top-link">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.top-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+{% endblock %}

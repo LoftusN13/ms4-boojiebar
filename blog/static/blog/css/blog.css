@@ -1,0 +1,28 @@
+/*-------------------------Blog Posts----------------------- */
+.blog-btn {
+    color: #403D39;
+    font-weight: 400;
+}
+
+.blog-btn:hover {
+    color: #151513;
+    font-weight: 500;
+}
+
+.blog-card-panels {
+    padding: 1rem;
+}
+
+.blogs-container {
+    margin: 0 .5rem .5rem .5rem;
+}
+
+/*-------------------------Media Queries----------------------- */
+@media only screen and (min-width: 358px) {
+    .blogs-container {
+        margin: 0 1rem 1rem 1rem;
+    }
+    .blog-card-panels {
+        padding: 1rem 1.5rem 1rem 1.5rem;
+    }
+}
