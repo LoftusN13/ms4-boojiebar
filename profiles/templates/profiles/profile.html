@@ -47,16 +47,16 @@
                     <div class="col">
                         <h6>Date:</h6>
                     </div>
-                    <div class="col">
+                    <div class="col d-none d-sm-block">
                         <h6>Items:</h6>
                     </div>
                     <div class="col">
                         <h6>Total:</h6>
                     </div>
                 </div>
-
+                <div class="order-history">
                 {% for order in orders %}
-                    <div class="row text-center py-2 align-items-center order-history">
+                    <div class="row text-center py-2 align-items-center">
                         <div class="col">
                             <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
                                 {{ order.order_number|truncatechars:6 }}
@@ -67,7 +67,7 @@
                             {{ order.date }}
                         </div>
 
-                        <div class="col">
+                        <div class="col d-none d-sm-block">
                             <ul class="list-unstyled">
                                 {% for item in order.lineitems.all %}
                                     <li class="small">
@@ -82,6 +82,7 @@
                         </div>
                     </div>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>

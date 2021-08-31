@@ -85,6 +85,9 @@ a.dropdown-item:hover {
     font-family: "Raleway", sans-serif;
     letter-spacing: .1rem;
 }
+#delivery-banner h6 {
+    font-size: .8rem;
+}
 
 input[name='q']::placeholder {
     color: #aab7c4;
@@ -269,7 +272,7 @@ h2 {
 }
 
 .details-container {
-    padding: 0 2rem 1rem 2rem;
+    padding-bottom: 1rem;
 }
 
 .details-container a {
@@ -492,6 +495,9 @@ h2 {
         padding: 1rem;
     }
     .shopping-bag h6 {
+        font-size: 1rem;
+    }
+    #delivery-banner h6 {
         font-size: 1rem;
     }
 }

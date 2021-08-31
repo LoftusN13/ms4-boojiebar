@@ -30,7 +30,7 @@
                         <div class="col">
                             <h6>Image</h6>
                         </div>
-                        <div class="col">
+                        <div class="col d-none d-md-block">
                             <h6>Product</h6>
                         </div>
                         <div class="col">
@@ -51,7 +51,7 @@
                                 {% endif %}
                             </div>
 
-                            <div class="col">
+                            <div class="col d-none d-md-block">
                                 <p>{{ item.product.name }}</p>
                             </div>
 
@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <button class="decrement-qty btn" 
+                                                <button class="decrement-qty btn py-0 ps-0 pe-1" 
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                     <span>
                                                         <i class="fas fa-minus fa-sm"></i>
@@ -75,7 +75,7 @@
                                                 id="id_qty_{{ item.item_id }}">
 
                                             <div class="input-group-append">
-                                                <button class="increment-qty btn"
+                                                <button class="increment-qty btn py-0 ps-1 pe-0"
                                                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                     <span>
                                                         <i class="fas fa-plus fa-sm"></i>
@@ -86,13 +86,13 @@
                                     </div>
                                 </form>
 
-                                <a class="update-link btn">
+                                <a class="update-link btn ps-1">
                                     <small>
                                         <i class="far fa-edit"></i>
                                     </small>
                                 </a>
 
-                                <a class="remove-item float-right btn " id="remove_{{ item.item_id }}">
+                                <a class="remove-item float-right btn pe-1" id="remove_{{ item.item_id }}">
                                     <small>
                                         <i class="far fa-trash-alt"></i>
                                     </small>

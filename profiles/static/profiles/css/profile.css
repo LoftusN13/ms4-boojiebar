@@ -32,6 +32,7 @@
 }
 
 .order-history {
-    max-height: 25rem;
+    max-height: 20rem;
     overflow-y: auto;
+    overflow-x: hidden;
 }
