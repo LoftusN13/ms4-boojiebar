@@ -44,6 +44,13 @@
     float: right;
 }
 
+.blog-details a {
+    text-decoration: none;
+}
+.blog-details a:hover {
+    font-weight: 600;
+}
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
     .blogs-container {

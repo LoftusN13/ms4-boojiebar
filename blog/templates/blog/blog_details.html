@@ -27,10 +27,21 @@
             </div>
 
             <h3 class="text-center">{{ blog.title }}</h3>
-            <small class="text-center pb-4">
+            <small class="text-center pb-2">
                 Written By {{ blog.author }} | {{ blog.created_at}} <br>
                 Last Updated: {{ blog.updated_at }}
             </small>
+            <!-- only allow superuser to have the option to Edit and Delete blogs -->
+            {% if request.user.is_superuser %}
+                <small class="text-center pb-2">
+                    <a href="{% url 'edit_blog' blog.id %}" class="pe-2 text-success">
+                        <i class="far fa-edit"></i> Edit
+                    </a>
+                    <a href="{% url 'delete_blog' blog.id %}" class="text-danger">
+                        <i class="far fa-trash-alt"></i> Delete
+                    </a>
+                </small>
+            {% endif %}
             <div class="col-12">
                 <div class="img-container pb-2 mx-md-4">
                     {% if blog.image %}
