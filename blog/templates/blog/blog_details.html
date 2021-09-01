@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row blog-details">
+            <div class="row return-link">
+                <!-- returns user to all Blog Posts -->
+                <a href="{% url 'blogs' %}" class="btn blog-btn">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span> All Blog Posts</span>
+                </a>
+            </div>
+
+            <h3 class="text-center">{{ blog.title }}</h3>
+            <small class="text-center pb-4">Written By {{ blog.author }} | {{ blog.created_at}}</small>
+            <div class="col-12">
+                <div class="img-container pb-2 mx-md-4">
+                    {% if blog.image %}
+                        <a href="{{ blog.image_url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                        </a>
+                        {% else %}
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ blog.title }}">
+                            </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="blog-post">
+                    <p class="text-center py-4">
+                        {{ blog.body_text }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
