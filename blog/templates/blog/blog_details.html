@@ -27,7 +27,10 @@
             </div>
 
             <h3 class="text-center">{{ blog.title }}</h3>
-            <small class="text-center pb-4">Written By {{ blog.author }} | {{ blog.created_at}}</small>
+            <small class="text-center pb-4">
+                Written By {{ blog.author }} | {{ blog.created_at}} <br>
+                Last Updated: {{ blog.updated_at }}
+            </small>
             <div class="col-12">
                 <div class="img-container pb-2 mx-md-4">
                     {% if blog.image %}
