@@ -40,7 +40,7 @@
                                                 <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}">
                                             </a>
                                             {% else %}
-                                                <a href="">
+                                                <a href="{% url 'blog_details' blog.id %}">
                                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ blog.title }}">
                                                 </a>
                                         {% endif %}

@@ -30,7 +30,19 @@
     padding: 0 0 1rem 1rem;
 }
 
+/*-------------------------Add Blog----------------------- */
+.add-blog .form-group {
+    padding: .25rem 0;
+}
 
+.add-blog .checkout-btn {
+    float: right;
+    font-size: .9rem;
+}
+
+.add-blog .blog-btn {
+    float: right;
+}
 
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
