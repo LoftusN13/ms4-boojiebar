@@ -263,6 +263,13 @@ The Montserrat and Raleway fonts will be used for the site as they work really w
 
 Font Awesome will provide all icons contained on the site. Icons will help users to easily recognise different elements on the site, for example, the social media links and the shopping bag.
 
+#### Final Changes
+Design-wise I didn't venture too far from my initial plans for the website. There were some minor layout adjustments, styling changes etc but for the most part I tried to stick to what I had planned. 
+
+I did venture from my colour scheme at times in favour of Bootstrap colours for some text as wherever they were implemented were for highlighting important information and I didn't want my monochrome theme to hide that importance.
+
+The main thing that I changed was the inclusion of a Blog app and the exclusion of a Review one. Initially I had thought that reviews were the way to go but as I developed the site I felt that both the products being sold, and the consumer they're being sold to, wouldn't benefit that much from reviews. I decided therefore to create a Blog app instead. Blog posts seemed like a more appropriate addition as users are on the site looking to create/upgrade their own bar so having the addition of posts, that discuss that kind of thing, seemed like the best thing to do.
+
 ---
 ## <p align="center">**Features**</p>
 All site features have been implemented in order to make the user's experience as comfortable and enjoyable as possible. It's extremely important that no features are problematic or complicated as this would likely result in users leaving the site quickly. The site is visually consistent and responsive.
@@ -559,11 +566,22 @@ All site features have been implemented in order to make the user's experience a
 #### *Delete Blog*
 - Accessible to admin via the *Delete* links contained on both the blog card panels and each individual blog page.
 - Once this Delete link is clicked, the blog post will immediately be deleted from the site.
-    - This is not ideal to have in place as the admin could easily delete them accidentally.
-    - A defensive feature will be implemented in a future release.
+    - This is not ideal to have in place as the admin could easily delete them accidentally so a defensive feature is required.
+        - **At the point of project submission, this defensive feature has not been added and so is left as a feature to be implemented.**.
 
 ### **Features Left to Implement**
+#### *Defensive Features*
+- For a future release, there needs to be some defense in place for the deletion of blogs and products to prevent admin users from deleting them accidentally.
+- This may be done in the form of a delete modal that is triggered upon clicking Delete and will ensure the admin user has to select confirm to delete.
 
+#### *Edit and Delete Blog Comments*
+- For a future release, the buttons/links for Edit and Delete of blog comments need to be functional.
+- The deletion aspect will also need some defense as mentioned above.
+
+#### *Social Aspects*
+- The ability for registered users to engage with one another, e.g. directly responding to someone's blog comments.
+- Potentially giving registered users the option to upload their own blog posts, with admin still having the option to delete if not appropriate.
+- Potenially incorporate some kind of recipe database where users can browse cocktail/drink recipes and registered users can add to the database.
 
 ---
 ## <p align="center">**Technologies Used**</p>
