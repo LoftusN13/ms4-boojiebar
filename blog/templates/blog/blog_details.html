@@ -27,7 +27,7 @@
             </div>
 
             <h3 class="text-center">{{ blog.title }}</h3>
-            <small class="text-center pb-2">
+            <small class="text-center pb-2 mb-2">
                 Written By {{ blog.author }} | {{ blog.created_at}} <br>
                 Last Updated: {{ blog.updated_at }}
             </small>
@@ -65,25 +65,89 @@
             </div>
         </div>
 
-        {% if request.user.is_authenticated %}
-            {% for comment in blog.comments.all %}
-                {{ comment.body }}
-                {{ comment.user }}
-                {{ comment.created_on }}
-                {{ comment.post }}
-            {% endfor %}
-        {% else %}
-                Create an Account or Sign in to read the blog comments!
-        {% endif %}
+        <hr class="blog-hr mb-5">
 
-        <h5>Leave a comment</h5>
-        <form method="POST" class="form mb-2">
-            {% csrf_token %}
-            {{ comment_form|crispy }}
-            <div class="float-right my-2">
-                <button class="btn checkout-btn" type="submit">Add Comment</button>
-                <a class="btn blog-btn" href="#">Cancel</a>
+        <div class="div comment-section">
+            <div class="row text-center">
+                <h5 class="mb-1">Blog Comments</h5>
+                {% if blog.comments.count == 0 %}
+                    <small class="mb-2">
+                        Be the first to comment!
+                    </small>
+                    {% else %}
+                    <small class="mb-2">
+                        {{ blog.comments.count }} Comment(s)
+                    </small>
+                {% endif %}
+                
+                {% if request.user.is_authenticated %}
+                    <div class="col blog-comments">
+                        {% for comment in blog.comments.all %}
+                            <div class="row">
+                                <div class="col">
+                                    <small class="">
+                                        By {{ comment.user }} | {{ comment.created_on }}</small> <br>
+                                    {% if request.user.is_authenticated %}
+                                        {% if request.user == comment.user or request.user.is_superuser %}
+                                            <small class="mb-2">
+                                                <a href="" class="pe-2 text-success">
+                                                    <i class="far fa-edit"></i> Edit
+                                                </a>
+                                                <a href="" class="text-danger">
+                                                    <i class="far fa-trash-alt"></i> Delete
+                                                </a>
+                                            </small>
+                                        {% endif %}
+                                    {% endif %}
+                                    <p class="py-3 mb-0">
+                                        {{ comment.body }}
+                                    </p>
+                                </div>
+                            </div>
+                            <hr class="mb-4 footer-hr">
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="mb-5">
+                        <a class="blog-btn" href="{% url 'account_login' %}">Sign In</a> or 
+                        <a class="blog-btn" href="{% url 'account_signup' %}">Register</a> to see or add comments on this post!
+                    </p>
+                {% endif %}
             </div>
-        </form>
+
+            <hr class="blog-hr mb-5 mt-3">
+
+            {% if request.user.is_authenticated %}
+                <div class="row mt-3 text-center add-comment">
+                    <div class="col">
+                        <h6 class="mb-0">Let Us Know What You Think!</h6>
+                        <small class="mb-2">Leave a comment below.</small>
+                        <form method="POST" class="form mb-2">
+                            {% csrf_token %}
+                            {{ comment_form|crispy }}
+                            <div class="mb-4 mt-2">
+                                <a class="btn blog-btn" href="{% url 'blog_details' blog.id %}">Cancel</a>
+                                <button class="btn checkout-btn" type="submit">Add Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     </div>
+
+    <div class="top-btn btn">
+        <a class="top-link">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.top-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
 {% endblock %}

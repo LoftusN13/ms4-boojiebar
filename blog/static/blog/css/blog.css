@@ -30,6 +30,12 @@
     padding: 0 0 1rem 1rem;
 }
 
+.blog-hr {
+    color: #403D39;
+    width: 90%;
+    margin: auto;
+}
+
 /*-------------------------Add Blog----------------------- */
 .add-blog .form-group {
     padding: .25rem 0;
@@ -51,6 +57,46 @@
     font-weight: 600;
 }
 
+/*-------------------------Comments----------------------- */
+.add-comment .form-group {
+    padding: .25rem 0;
+}
+
+.add-comment .form-group label {
+    float: left;
+}
+
+.add-comment .checkout-btn {
+    font-size: .9rem;
+}
+
+.comment-section a {
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.comment-section a:hover {
+    font-weight: 500;
+}
+
+.comment-section .footer-hr {
+    width: 90%;
+    margin: auto;
+}
+
+.blog-comments {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    max-height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.add-comment {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 /*-------------------------Media Queries----------------------- */
 @media only screen and (min-width: 358px) {
     .blogs-container {
@@ -70,5 +116,18 @@
     .blog-post p,
     .img-container {
         padding: 0 7rem;
+    }
+    .blog-comments,
+    .add-comment {
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .blog-comments,
+    .add-comment {
+        margin-left: 15rem;
+        margin-right: 15rem;
     }
 }
