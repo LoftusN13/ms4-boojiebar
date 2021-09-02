@@ -4,8 +4,8 @@ from django.shortcuts import (
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import BlogPost
-from .forms import BlogForm
+from .models import BlogPost, Comment
+from .forms import BlogForm, CommentForm
 
 # Create your views here.
 
@@ -26,9 +26,36 @@ def all_blog_posts(request):
 def blog_details(request, blog_id):
     # view to return individual blog post
     blog = get_object_or_404(BlogPost, pk=blog_id)
+    user = request.user
+    comments = Comment.objects.all()
+    new_comment = None
 
+    # Comments posted to blog post
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            post = get_object_or_404(BlogPost, pk=blog_id)
+            comment_form.instance.post = post
+
+            # Creates Comment object
+            new_comment = comment_form.save(commit=False)
+            # Assigns the current blog to comment
+            new_comment.blog = blog
+            # Saves comment to db
+            new_comment.save()
+            messages.success(request, 'Successfully added your comment!')
+            return redirect(reverse('blog_details', args=[blog.id]))
+        else:
+            messages.error(request, 'Failed to add comment. \
+                Please ensure the form is valid.')
+    else:
+        comment_form = CommentForm()
     context = {
         'blog': blog,
+        'user': user,
+        'comments': comments,
+        'new_comment': new_comment,
+        'comment_form': comment_form
     }
 
     return render(request, 'blog/blog_details.html', context)

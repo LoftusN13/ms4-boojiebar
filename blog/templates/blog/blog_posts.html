@@ -31,7 +31,7 @@
             <div class="col blogs-container p-md-4">
                 <div class="row blog-card-panels">
                     {% for blog in blogs %}
-                        <div class="col-12">
+                        <div class="col-12 mb-5">
                             <div class="card h-100">
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -41,7 +41,7 @@
                                             </a>
                                             {% else %}
                                                 <a href="{% url 'blog_details' blog.id %}">
-                                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ blog.title }}">
+                                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}1.png" alt="{{ blog.title }}">
                                                 </a>
                                         {% endif %}
                                     </div>

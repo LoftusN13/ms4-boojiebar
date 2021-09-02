@@ -50,7 +50,7 @@
                         </a>
                         {% else %}
                             <a href="">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ blog.title }}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}1.png" alt="{{ blog.title }}">
                             </a>
                     {% endif %}
                 </div>
@@ -64,5 +64,26 @@
                 </div>
             </div>
         </div>
+
+        {% if request.user.is_authenticated %}
+            {% for comment in blog.comments.all %}
+                {{ comment.body }}
+                {{ comment.user }}
+                {{ comment.created_on }}
+                {{ comment.post }}
+            {% endfor %}
+        {% else %}
+                Create an Account or Sign in to read the blog comments!
+        {% endif %}
+
+        <h5>Leave a comment</h5>
+        <form method="POST" class="form mb-2">
+            {% csrf_token %}
+            {{ comment_form|crispy }}
+            <div class="float-right my-2">
+                <button class="btn checkout-btn" type="submit">Add Comment</button>
+                <a class="btn blog-btn" href="#">Cancel</a>
+            </div>
+        </form>
     </div>
 {% endblock %}
