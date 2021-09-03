@@ -31,7 +31,14 @@
 
 <p align="center"><img src="documentation/testing/css_validation.png" width="70%" alt="CSS Code Validation"/></p>
 
+- All HTML code was checked and validated with [W3C Markup Checker](https://validator.w3.org/nu/). No errors reported.
+
 - All JavaScript code throughout the site passed through [JSHint](https://jshint.com/) with no major errors.
+
+- Python code was passed through PEP8 online to ensure compliancy.
+    - 4 lines in settings.py returned as "line too long".
+        - I opted not to do anything about this as it's not affecting the code and I didn't want to do anything that would risk throwing huge errors.
+    - All other .py files reported no errors.
 
 
 ---
