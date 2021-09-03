@@ -31,6 +31,8 @@
 
 <p align="center"><img src="documentation/testing/css_validation.png" width="70%" alt="CSS Code Validation"/></p>
 
+- All JavaScript code throughout the site passed through [JSHint](https://jshint.com/) with no major errors.
+
 
 ---
 
@@ -77,7 +79,6 @@
     - **Microsoft Edge** site works well with no issues noted.
 
 ---
-
 ## **Bugs**
 - I encountered a bug with the **Safari** browser.
     - The site works perfectly with no issues up until the Checkout stage.
@@ -98,7 +99,9 @@
 
 - On the Add Blog and Add Comment forms, the corresponding Author and User fields are in the form of a dropdown menu containing the names of all registered site users rather than just the current signed-in user. This means that you can add a comment under another user's name which is not good.
     - Further troubleshooting is required to fix this bug.
-    - **This bug was not yet resolved upon submission of this project.** 
+    - **This bug was not yet resolved upon submission of this project.**
+
+- Less of a bug and more of a styling/layout issue but on some pages of the site with not a lot of content the footer does not remain at the bottom. Initially having it sticky/fixed caused a lot of bigger layout issues so I removed those classes. It is something that will need to be worked out for a future release.
 
 ---
 
@@ -152,14 +155,25 @@ From my testing, CRUD operations are functional and in-place where necessary.
 ---
 
 ## **Emails**
+I manually performed various tasks on the site to ensure that Emails were successfully sent when supposed to. I received an email to verify my email address upon registering for an account, for resetting my password and for my order confirmations. More details can be found in [Testing User Stories](#testing-user-stories).
 
 ---
-
 ## **Form Validation**
+I manually filled out and checked all forms on the site to ensure they functioned as expected. Forms checked include Sign Up, Sign In, Reset Password, Change Password, Checkout, Update Profile, Add Product, Edit Product, Add Blog, Edit Blog, Add Comment.
+- All forms from my testing worked as expected, alerted me to fields left blank, alerted me to fields filled out incorrectly.
+- The only bug noted is in the Add Blog and Add Comment forms, which I have detailed [here](#bugs).
+- More details can be found in [Testing User Stories](#testing-user-stories).
 
 ---
 
 ## **Checkout and Stripe**
+I tested the Stripe payment method on the Checkout page to ensure it was functioning.
+- I tried to submit the form leaving the whole field blank and was alerted to the error.
+- I tried to submit with an invalid card number and was alerted to the error.
+- I tried to submit with a past expiry date and was alerted to the error.
+- I tested using Stripe's test card: 4242 4242 4242 4242 02/24 24242 and was able to submit successfully. 
+
+From this testing I concluded that it is functioning as expected with the exception of [this bug](#bug) found on **Safari**. More details can be found in [Testing User Stories](#testing-user-stories).
 
 ---
 

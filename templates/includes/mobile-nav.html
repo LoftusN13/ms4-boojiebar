@@ -1,45 +1,48 @@
-<li class="list-inline-item">
-<!-- site logo link for home page -->
-<a href="{% url 'home' %}" class="mobile-nav-link nav-logo d-block d-lg-none">
-    <img src="{{ MEDIA_URL }}site-logo.png" id="logo" alt="Boojie Bar Logo">
-</a>
-</li>
-
-<li class="list-inline-item dropdown">
-    <a class="mobile-nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="text-center">
-            <div><i class="fas fa-user fa-lg"></i></div>
-            <p class="my-0">My Account</p>
-        </div>
+<ul class="list-inline list-unstyled text-center mb-0">
+   <li class="list-inline-item">
+    <!-- site logo link for home page -->
+    <a href="{% url 'home' %}" class="mobile-nav-link nav-logo d-block d-lg-none me-0">
+        <img src="{{ MEDIA_URL }}site-logo.png" class="logo" alt="Boojie Bar Logo">
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
-        <!-- registered users link options -->
-        {% if request.user.is_authenticated %}
-            <!-- admin link options -->
-            {% if request.user.is_superuser %}
-                <a href="{% url 'add_product' %}" class="dropdown-item">Manage Products</a>
-                <a href="{% url 'add_blog' %}" class="dropdown-item">Manage Blogs</a>
-            {% endif %}
-            <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
-        <!-- unregistered users link options -->
-        {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
-        {% endif %}
-    </div>
-</li>
-<li class="list-inline-item">
-    <a class="mobile-nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
-        <div class="text-center">
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-            <p class="mb-0">
-                {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
-                {% else %}
-                    €0.00
+    </li>
+</ul>
+<ul class="list-inline list-unstyled text-center mb-0 px-2">
+    <li class="list-inline-item dropdown">
+        <a class="mobile-nav-link d-block d-lg-none" href="#" id="mobile-user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center">
+                <div><i class="fas fa-user fa-lg"></i></div>
+                <p class="my-0">My Account</p>
+            </div>
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="mobile-user-options">
+            <!-- registered users link options -->
+            {% if request.user.is_authenticated %}
+                <!-- admin link options -->
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Manage Products</a>
+                    <a href="{% url 'add_blog' %}" class="dropdown-item">Manage Blogs</a>
                 {% endif %}
-            </p>
+                <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
+            <!-- unregistered users link options -->
+            {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
+            {% endif %}
         </div>
-    </a>
-</li>
+    </li>
+    <li class="list-inline-item">
+        <a class="mobile-nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
+            <div class="text-center">
+                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <p class="mb-0">
+                    {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                        €0.00
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    </li>
+</ul> 

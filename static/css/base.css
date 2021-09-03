@@ -14,7 +14,7 @@ body {
 
 
 /*-------------------------Header----------------------- */
-#logo {
+.logo {
     height: 5.5rem;
 }
 
@@ -42,7 +42,7 @@ a.dropdown-item:hover {
     margin-right: .5rem;
 }
 
-.mobile-nav-link #logo {
+.mobile-nav-link .logo {
     height: 4rem;
 }
 
@@ -515,7 +515,7 @@ h2 {
         font-size: 1rem;
     }
 
-    .mobile-nav-link #logo {
+    .mobile-nav-link .logo {
         height: 5rem;
     }
 
