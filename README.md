@@ -2,7 +2,7 @@
 
 # <p align="center">**MS4: Boojie Bar**</p>
 
- ### View the live project [here.](https://ms4-boojiebar.herokuapp.com/)
+ ### View the live project [here.](https://ms4-boojiebar.onrender.com/)
 
 This website has been created as my submission for Milestone Project 4 for the Code Institute. *Boojie Bar* is an e-commerce website specialising in the sale of cocktail equipment and home-bar decor. The website is designed to be responsive and accessible on a variety of devices, allowing potential customers to easily browse and/or purchase the available products. 
 
